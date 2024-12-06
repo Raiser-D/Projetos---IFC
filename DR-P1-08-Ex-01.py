@@ -500,10 +500,18 @@ Digite o número referente à sua escolha: ''')
             segm_ensino = input("Insira o segmento de ensino a qual esta pertence (Pode ser mais de um): ")
             prof_titular = input("Insira o nome do professor titular desta disciplina: ")
 
-            obj_disciplina = Disciplina(id, descricao, segm_ensino)
-            obj_turma.adicionar_disciplina(obj_disciplina, obj_professor)
-            print("-"*21)
-            print("Disicplina cadastrada com sucesso!")
+            try:
+                # Verifica se o professor foi criado
+                obj_professor  # Acessar diretamente; gerará NameError se não existir
+                
+                # Cria e adiciona a disciplina
+                obj_disciplina = Disciplina(id, descricao, segm_ensino)
+                obj_turma.adicionar_disciplina(obj_disciplina, obj_professor)
+                print("-" * 21)
+                print("Disciplina cadastrada com sucesso!")
+            except NameError:
+                print("-" * 21)
+                print("Erro: Nenhum professor foi criado. Não é possível adicionar uma disciplina sem um professor.")
 
         elif solicitar == '11': # Editar disciplina
             print("-"*21)
