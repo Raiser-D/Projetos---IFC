@@ -502,7 +502,7 @@ Digite o número referente à sua escolha: ''')
 
             try:
                 # Verifica se o professor foi criado
-                obj_professor  # Acessar diretamente; gerará NameError se não existir
+                obj_professor  # Acessar diretamente, gerará NameError se não existir
                 
                 # Cria e adiciona a disciplina
                 obj_disciplina = Disciplina(id, descricao, segm_ensino)
