@@ -255,7 +255,7 @@ class Turma:
 
         # Verificar condições para criar turmas
         if segm_ensino == '1' or segm_ensino == 'Ensino Médio':
-            if alunos_EM >= 1:
+            if alunos_EM >= 20:
                 turma_EM = Turma(nome_turma, segm_ensino, curso, ano)
                 turmas.append(turma_EM)
                 for turma in turmas:
@@ -265,7 +265,7 @@ class Turma:
                 print("Não é possível criar turma de Ensino Médio (mínimo: 20 alunos).")
     
         elif segm_ensino == '2' or segm_ensino == 'Ensino Superior':
-            if alunos_ES >= 2:
+            if alunos_ES >= 5:
                 turma_ES = Turma(nome_turma, segm_ensino, curso, ano)
                 turmas.append(turma_ES)
                 for turma in turmas:
